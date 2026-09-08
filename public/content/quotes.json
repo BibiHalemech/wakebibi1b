@@ -1,0 +1,59 @@
+{
+  "quotes": [
+    {
+      "id": "1",
+      "speaker": "",
+      "text": "ביבי: אני חושב שיש הפרזה בזה (בהתרעות למלחמה)",
+      "date": "13/4/2023",
+      "source": "ראיון אצל ינון מגל",
+      "source_url": "https://news.walla.co.il/item/3620650",
+      "context": "generic placeholder — not a political quote",
+      "enabled": true,
+      "verified": true
+    },
+    {
+      "id": "2",
+      "speaker": "",
+      "text": "נתניהו סירב לפגוש את הרמטכ\"ל לסקירה ביטחונית לפני ההצבעה",
+      "date": "24/3/2023",
+      "source": "N12",
+      "source_url": "www.mako.co.il/news-politics/2023_q3/Article-017eade94778981026.htm",
+      "context": "generic placeholder — not a political quote",
+      "enabled": true,
+      "verified": true
+    },
+    {
+      "id": "3",
+      "speaker": "",
+      "text": "\"האויבים מזהים הזדמנות היסטורית עקב המשבר\": מכתבי אמ\"ן לנתניהו נחשפים",
+      "date": "28/7/2023",
+      "source": "YNET",
+      "source_url": "https://www.ynet.co.il/news/article/yokra13525790",
+      "context": "generic placeholder — not a political quote",
+      "enabled": true,
+      "verified": true
+    },
+    {
+      "id": "q_off",
+      "speaker": "",
+      "text": "לא אמור להופיע.",
+      "date": "",
+      "source": "מערכת",
+      "source_url": "",
+      "context": "filter fixture — enabled false",
+      "enabled": false,
+      "verified": true
+    },
+    {
+      "id": "q_unverified",
+      "speaker": "",
+      "text": "גם זה לא אמור להופיע.",
+      "date": "",
+      "source": "מערכת",
+      "source_url": "",
+      "context": "filter fixture — verified false",
+      "enabled": true,
+      "verified": false
+    }
+  ]
+}

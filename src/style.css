@@ -1,0 +1,24 @@
+:root {
+  --linen: #f3eee4;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--linen);
+  overflow: hidden;
+  font-family: Heebo, Assistant, "Segoe UI", sans-serif;
+}
+
+#game {
+  /* Phaser FIT + CENTER_BOTH positions in LTR. Page stays RTL on <html>. */
+  width: 100%;
+  height: 100%;
+  direction: ltr;
+}
+
+#game canvas {
+  display: block;
+}
