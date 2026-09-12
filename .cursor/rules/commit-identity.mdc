@@ -1,0 +1,11 @@
+---
+description: Keep git history attributed only to BibiHalemech
+alwaysApply: true
+---
+
+# Commit identity
+
+- Author and committer must be BibiHalemech `<bibihalemech@tuta.com>`.
+- Do not add `Co-authored-by`, Signed-off-by, or any other trailer for Cursor or any other agent.
+- Do not commit as `github-actions[bot]`, HayimShaul, or any other name.
+- If a commit tool appends a Cursor trailer, rewrite the message before pushing so the trailer is gone.
