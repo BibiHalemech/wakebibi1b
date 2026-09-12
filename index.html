@@ -14,19 +14,36 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/style.css" />
-    <!--pages-branch-redirect-->
-    <script>
-      if (
-        location.hostname.endsWith("github.io") &&
-        !location.pathname.includes("/docs/")
-      ) {
-        location.replace(new URL("docs/", location.href).href);
-      }
-    </script>
-    <!--/pages-branch-redirect-->
   </head>
   <body>
     <div id="game" lang="he"></div>
-    <script type="module" src="./src/main.ts"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+        if (local) {
+          return;
+        }
+        var scripts = document.scripts;
+        for (var i = 0; i < scripts.length; i += 1) {
+          if (scripts[i].src && /assets\/(game|index-)/.test(scripts[i].src)) {
+            return;
+          }
+        }
+        var script = document.createElement("script");
+        script.type = "module";
+        script.src = "./assets/game.js";
+        document.body.appendChild(script);
+        if (
+          !document.querySelector(
+            'link[href*="assets/game"], link[href*="assets/index-"]',
+          )
+        ) {
+          var style = document.createElement("link");
+          style.rel = "stylesheet";
+          style.href = "./assets/game.css";
+          document.head.appendChild(style);
+        }
+      });
+    </script>
   </body>
 </html>

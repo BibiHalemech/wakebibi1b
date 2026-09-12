@@ -1,16 +1,19 @@
 import { defineConfig, type Plugin } from "vite";
 
-function stripPagesRedirect(): Plugin {
+function injectViteEntry(): Plugin {
   return {
-    name: "strip-pages-redirect",
-    transformIndexHtml(html, ctx) {
-      if (ctx.server) {
-        return html;
-      }
-      return html.replace(
-        /<!--pages-branch-redirect-->[\s\S]*?<!--\/pages-branch-redirect-->\s*/g,
-        "",
-      );
+    name: "inject-vite-entry",
+    transformIndexHtml: {
+      order: "pre",
+      handler(html) {
+        if (html.includes("/src/main.ts")) {
+          return html;
+        }
+        return html.replace(
+          "</body>",
+          '    <script type="module" src="./src/main.ts"></script>\n  </body>',
+        );
+      },
     },
   };
 }
@@ -18,7 +21,17 @@ function stripPagesRedirect(): Plugin {
 export default defineConfig(({ command }) => ({
   // Relative base keeps project Pages and local preview on the same URLs.
   base: command === "build" ? "./" : "/",
-  plugins: [stripPagesRedirect()],
+  plugins: [injectViteEntry()],
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: "assets/game.js",
+        chunkFileNames: "assets/[name].js",
+        assetFileNames: (asset) =>
+          asset.name?.endsWith(".css") ? "assets/game.css" : "assets/[name][extname]",
+      },
+    },
+  },
   server: {
     host: true,
     port: 5173,
