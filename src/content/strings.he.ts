@@ -18,6 +18,11 @@ export const strings = {
   notTheTest: "זה לא המבחן.",
   theTest: "המבחן הוא ללמוד מטעויות ולא לבחור אדם כושל.",
   playAgain: "שוב",
+  moreGames: "עוד משחקים",
+  moreGamesList: [
+    { label: "לוחם ישיבה", url: "https://bibihalemech.github.io/tora-figher/" },
+    { label: "ניהול נכסים", url: "https://bibihalemech.github.io/assets/" },
+  ],
   quoteSourceFallback: "מקור",
   quoteDateFallback: "תאריך",
   genericQuote: [

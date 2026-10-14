@@ -3,6 +3,7 @@ import { COLORS, FONT_FAMILY, STAGE_WIDTH, SceneKeys } from "../config";
 import { strings } from "../content/strings.he";
 import { startBackgroundMusic } from "../systems/music";
 import { addPillButton } from "../ui/button";
+import { addMoreGamesLink } from "../ui/moreGames";
 import { addNarrativeText, addSceneBackdrop } from "../ui/narrative";
 
 export class TitleScene extends Phaser.Scene {
@@ -34,5 +35,7 @@ export class TitleScene extends Phaser.Scene {
         this.scene.start(SceneKeys.Play);
       },
     });
+
+    addMoreGamesLink(this, { y: 1380 });
   }
 }

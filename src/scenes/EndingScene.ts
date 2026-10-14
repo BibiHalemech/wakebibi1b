@@ -4,6 +4,7 @@ import { strings } from "../content/strings.he";
 import { loadSession, pileTexture } from "../systems/session";
 import { startBibiFrames } from "../ui/bibi";
 import { addPillButton } from "../ui/button";
+import { addMoreGamesLink } from "../ui/moreGames";
 import { addBedroom, addNarrativeText, fadeIn, fadeOut, linenBackground } from "../ui/narrative";
 
 const PILE_CAP = 20;
@@ -105,12 +106,16 @@ export class EndingScene extends Phaser.Scene {
     const again = addPillButton(this, {
       label: strings.playAgain,
       x: STAGE_WIDTH / 2,
-      y: 1780,
+      y: 1720,
       onClick: () => {
         this.scene.start(SceneKeys.Title);
       },
     });
     again.setAlpha(0);
     this.tweens.add({ targets: again, alpha: 1, duration: 320 });
+
+    const more = addMoreGamesLink(this, { y: 1860 });
+    more.setAlpha(0);
+    this.tweens.add({ targets: more, alpha: 1, duration: 320 });
   }
 }
